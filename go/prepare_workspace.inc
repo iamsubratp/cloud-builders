@@ -69,6 +69,7 @@ You are seeing this message because none of the checks succeeded.
 }
 
 prepare_project_root() {
+    echo "preparing project root"
     shadow_workspace="./gopath/src/$PROJECT_ROOT"
     link_dir="$(dirname "$shadow_workspace")"
 
@@ -90,4 +91,6 @@ prepare_project_root() {
     # they were read or written from the original directory, except that the new
     # working directory will be properly couched in GOPATH.
     cd "$shadow_workspace"
+    echo "prepared project root"
+    ls -trtR /workspace
 }
